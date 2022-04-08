@@ -12,7 +12,7 @@ resource "aws_instance" "my-instance" {
   instance_type   = "t2.micro"
   associate_public_ip_address = "true"
   availability_zone = "us-east-1f"
-  vpc_security_group_ids = ["sg-06c51062474fb4ba7"]
+  vpc_security_group_ids = [aws_security_group.my-sg.id]
   tags = {
     Name = "Terraform Instance"
   }
